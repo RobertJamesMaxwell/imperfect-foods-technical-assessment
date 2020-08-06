@@ -1,10 +1,12 @@
-import React from 'react';
-import './Filters.css';
+import React from "react";
+import "./Filters.css";
 
-const Filters = () => (
-  <div className="Filters-row">
-    <select onChange={(event) => console.log(event.target.value)}>
-      <option value="All Products">All Products</option>
+const Filters = ({ updateFilter }) => (
+  <div className='Filters-row'>
+    <select onChange={(event) => updateFilter(event.target.value)}>
+      <option value=''>All Products</option>
+      <option value='Robert'>Robert</option>
+      <option value='Fruit'>Fruit</option>
     </select>
   </div>
 );
