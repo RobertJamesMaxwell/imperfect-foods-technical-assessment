@@ -1,8 +1,56 @@
+# Imperfect Foods Technical Assessment
+
+## Description
+
+Thanks for taking the time to review my technical assessment! I chose to implement the 'Category Shelves' functionality from Option 2 in the assessment doc. A summary of the added functionality:
+
+1. Products are loaded in the frontend from a network call instead of the local json file. The server serves the products from the products.json file.
+1. Product categories, along with how many products are in each category, are calculated based on the products.json file and served to the frontend to populate the categories dropdown.
+1. When a user selects a filter value from the category dropdown, a network call is sent to the server. The server then filters the products based on this value and serves back the filtered products
+
+## Considerations and thoughts for future enhancements
+
+Given the time constraints of this assessment and the instructions to focus on data manipulation and asynchronous logic, there's many features which I considered, but chose not to address at the moment. Given more time and/or the goal of taking this app from project/proof-of-concept to a production-ready, many of these considerations would likely be addressed.
+
+1. Add loading state for network calls. Add a spinner or some other loading indicator to the user.
+1. Add error state for failed network calls.
+1. Add the filter query param to the URL so a user could refresh the page and keep the filter
+1. Add pagination. Right now the 'All Products' filter loads all 247 products, which seems high for one network call. Paging could be added as a query param to network calls.
+1. Add a sorting dropdown. Allows users to sort products alphabetically in an ascending/descending manner. Could also be added as a query param to network calls.
+1. Abstract out the global state, which is all currently held in the App component. This could be pulled out to a Context and then each component could pull in what it needs. As the app and state grows, there could be a case to add a dependency like redux for state management.
+1. CSS Bug: When a user filter's by 'Dried Fruit & Nuts' the image of the one card that returns is cut off. Based on the instructions CSS adjustments seemed out of scope at the moment.
+1. Other long term feature enhancements / team topic discussions:
+
+   - Testing: Overall strategy, dependencies, etc
+   - File Structure: Agreed upon patterns both for app and server
+   - Typing: Introduce PropTypes dependency or maybe Typescript
+   - Database: Everything is loaded from a json file right now, so some of the filtering and sorting currently implemented in the server could potentially be handled in a database query, depending on database choice. The api implementation would also be affected if, for example, the product categories were their own table in a relational database and referenced by a foreign key in the products table.
+
+## Running the project
+
+From the root project directory:
+(note: npm can be used instead of yarn if desired)
+
+```sh
+# Step 1: Install dependencies. The npm 'cors' package was added from the base project as a dev dependency. This is necessary for local development so the frontend react app and the backend node express server won't be blocked by CORS (Cross Origin Resource Sharing)
+$ yarn install
+
+# Step 2: Start the server. Runs on PORT 9001 by default
+$ node api/server.js
+
+# Step 3: Start the app. Runs on PORT 3000 by default
+$ yarn start
+```
+
+---
+
+# Below is original Readme from project clone
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running
 
-We added a separate express API to serve products to the client app.  To run that prior to kicking
+We added a separate express API to serve products to the client app. To run that prior to kicking
 off the webpack dev server running the react app:
 
 ```sh
