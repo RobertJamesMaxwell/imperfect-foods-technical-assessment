@@ -2,7 +2,7 @@
 
 ## Description
 
-Thanks for taking the time to review my technical assessment! I chose to implement the 'Category Shelves' functionality from Option 2 in the assessment doc. A summary of the added functionality:
+Thanks for taking the time to review my technical assessment! I chose to implement the 'Category Shelves' functionality from Option 2 in the assessment document. A summary of the added functionality:
 
 1. Products are loaded in the frontend from a network call instead of the local json file. The server serves the products from the products.json file.
 1. Product categories, along with how many products are in each category, are calculated based on the products.json file and served to the frontend to populate the categories dropdown.
@@ -12,15 +12,15 @@ Thanks for taking the time to review my technical assessment! I chose to impleme
 
 ## Considerations and thoughts for future enhancements
 
-Given the time constraints of this assessment and the instructions to focus on data manipulation and asynchronous logic, there's many features which I considered, but chose not to address at the moment. Given more time and/or the goal of taking this app from project/proof-of-concept to a production-ready, many of these considerations would likely be addressed.
+Given the time constraints of this assessment and the instructions to focus on data manipulation and asynchronous logic, some other features were considered, but not addressed at the moment. Given more time and/or the goal of taking this app from side-project/proof-of-concept to production-ready, many of these considerations would likely need to be handled.
 
 1. Add loading state for network calls. Add a spinner or some other loading indicator to the user.
 1. Add error state for failed network calls.
-1. Add the filter query param to the URL so a user could refresh the page and keep the filter
-1. Add pagination. Right now the 'All Products' filter loads all 247 products, which seems high for one network call. Paging could be added as a query param to network calls.
+1. Add the filter query param to the URL so a user can refresh the page and keep the same filter
+1. Add pagination. Right now the 'All Products' filter loads all 247 products, which could be considered too much for one network call. Paging could be added as a query param to network calls.
 1. Add a sorting dropdown. Allows users to sort products alphabetically in an ascending/descending manner. Could also be added as a query param to network calls.
-1. Abstract out the global state, which is all currently held in the App component. This could be pulled out to a Context and then each component could pull in what it needs. As the app and state grows, there could be a case to add a dependency like redux for state management.
-1. CSS Bug: When a user filter's by 'Dried Fruit & Nuts' the image of the one card that returns is cut off. Based on the instructions CSS adjustments seemed out of scope at the moment.
+1. Abstract out the global state, which is all currently held in the App component. Right now, it's not unruly as the App component is still only around 50 lines of code, but this could be pulled out to a Context and then each component could pull in what it needs. As the app and state grows, there could be a case to add a dependency like redux for state management.
+1. CSS Bug: When a user filter's by 'Dried Fruit & Nuts' the image of the one card that returns is cut off. Based on the instructions, CSS adjustments/refactoring seemed out of scope for the time being.
 1. Other long term feature enhancements / team topic discussions:
 
    - Testing: Overall strategy, dependencies, etc
@@ -43,6 +43,8 @@ $ node api/server.js
 # Step 3: Start the app. Runs on PORT 3000 by default
 $ yarn start
 ```
+
+---
 
 ---
 
