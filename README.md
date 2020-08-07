@@ -8,6 +8,8 @@ Thanks for taking the time to review my technical assessment! I chose to impleme
 1. Product categories, along with how many products are in each category, are calculated based on the products.json file and served to the frontend to populate the categories dropdown.
 1. When a user selects a filter value from the category dropdown, a network call is sent to the server. The server then filters the products based on this value and serves back the filtered products
 
+![Product Cards Demo](./screenshots/product-cards.gif)
+
 ## Considerations and thoughts for future enhancements
 
 Given the time constraints of this assessment and the instructions to focus on data manipulation and asynchronous logic, there's many features which I considered, but chose not to address at the moment. Given more time and/or the goal of taking this app from project/proof-of-concept to a production-ready, many of these considerations would likely be addressed.
