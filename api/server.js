@@ -9,7 +9,7 @@ const port = process.env.PORT || 9001;
 //TODO Enable only for develop/local environment based off of an environment variable
 app.use(cors());
 
-// Calculates the unique categories based on the products. Since this process is computationally expensive, we do it once on app start up, instead of inside of the endpoint which would run as each request is served.
+// Calculates the unique categories based on the products. Since this process is computationally expensive, it is done once on app start up, instead of inside of the endpoint which would run as each request is served
 const categories = categoriesData.getCategories();
 
 /**
