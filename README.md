@@ -30,8 +30,13 @@ Given the time constraints of this assessment and the instructions to focus on d
 
 ## Running the project
 
+Notes:
+
+- npm can be used instead of yarn if desired
+- yarn version used: 1.22.4
+- node version used: v10.12.0
+
 From the root project directory:
-(note: npm can be used instead of yarn if desired)
 
 ```sh
 # Step 1: Install dependencies. The npm 'cors' package was added from the base project as a dev dependency. This is necessary for local development so the frontend react app and the backend node express server won't be blocked by CORS (Cross Origin Resource Sharing)
